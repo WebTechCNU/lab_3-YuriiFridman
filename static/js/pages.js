@@ -259,3 +259,34 @@ closeBtn.addEventListener('click', function () {
 
 
 // Trash Bin code
+
+
+function sort(attribute){
+    imagesContainer.innerHTML = '';
+    if(attribute === 'description'){
+        images.sort(sortTrashByDescription);
+    }
+    else if (attribute === 'price'){
+        images.sort(sortTrashByPrice);
+    }
+}
+
+function sortTrashByDescription(a,b) {
+    if (a.description < b.description) {
+        return -1;
+    }
+    if (a.description > b.description) {
+        return 1;
+    }
+    return 0;
+}
+
+function sortTrashByPrice(a,b) {
+    if (a.price < b.price) {
+        return -1;
+    }
+    if (a.price > b.price) {
+        return 1;
+    }
+    return 0;
+}
